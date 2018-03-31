@@ -7,10 +7,12 @@
 
 #import "ViewController.h"
 #import "RepositoryCell.h"
+#import "FeedProtocol.h"
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UITableView *table;
+@property (nonatomic, weak  ) IBOutlet UITableView *table;
+@property (nonatomic, strong) id<FeedDelegate> feed;
 
 @end
 
@@ -19,13 +21,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.table registerNib:[RepositoryCell nib] forCellReuseIdentifier:[RepositoryCell identifier]];
-    // Do any additional setup after loading the view, typically from a nib.
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.table addSubview:refresh];
+    self.table.alwaysBounceVertical = YES;
+    //Need to setup feed here
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refresh:(UIRefreshControl *)sender{
+    __weak typeof(sender) _sender = sender;
+    [self.feed refreshWithCompletionHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_sender endRefreshing];
+        });
+    }];
 }
 
 
@@ -36,7 +51,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return [self.feed count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -45,8 +60,19 @@
 }
 
 
-
-
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    //Ask feed for next chunk
+    if (indexPath.row == [self.feed count] - 1){
+        //20 should be replaced with some var
+        __weak typeof(self) _self = self;
+        [self.feed loadNext:20 withCompletionHandler:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_self.table reloadData];
+            });
+        }];
+    }
+}
 
 @end

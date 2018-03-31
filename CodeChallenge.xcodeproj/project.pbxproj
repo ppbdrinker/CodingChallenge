@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B5FAB53206F751500371E40 /* RepositoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB51206F751500371E40 /* RepositoryCell.m */; };
 		6B5FAB54206F751500371E40 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5FAB52206F751500371E40 /* RepositoryCell.xib */; };
+		6B5FAB5D206F83B000371E40 /* GitHubFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB5C206F83B000371E40 /* GitHubFeed.m */; };
 		8AC26782206EC0550083E45A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC26781206EC0550083E45A /* AppDelegate.m */; };
 		8AC26785206EC0550083E45A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC26784206EC0550083E45A /* ViewController.m */; };
 		8AC26788206EC0550083E45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC26786206EC0550083E45A /* Main.storyboard */; };
@@ -22,6 +23,10 @@
 		6B5FAB50206F751500371E40 /* RepositoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepositoryCell.h; sourceTree = "<group>"; };
 		6B5FAB51206F751500371E40 /* RepositoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepositoryCell.m; sourceTree = "<group>"; };
 		6B5FAB52206F751500371E40 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		6B5FAB5A206F7E2C00371E40 /* FeedProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedProtocol.h; sourceTree = "<group>"; };
+		6B5FAB5B206F83B000371E40 /* GitHubFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubFeed.h; sourceTree = "<group>"; };
+		6B5FAB5C206F83B000371E40 /* GitHubFeed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubFeed.m; sourceTree = "<group>"; };
+		6B5FAB5E206F870D00371E40 /* FetchDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchDelegate.h; sourceTree = "<group>"; };
 		8AC2677D206EC0550083E45A /* CodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC26780206EC0550083E45A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AC26781206EC0550083E45A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +72,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6B5FAB5F206F883500371E40 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6B5FAB5A206F7E2C00371E40 /* FeedProtocol.h */,
+				6B5FAB5E206F870D00371E40 /* FetchDelegate.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		8AC26774206EC0550083E45A = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +112,9 @@
 				8AC2678B206EC0550083E45A /* LaunchScreen.storyboard */,
 				8AC2678E206EC0550083E45A /* Info.plist */,
 				8AC2678F206EC0550083E45A /* main.m */,
+				6B5FAB5F206F883500371E40 /* Protocols */,
+				6B5FAB5B206F83B000371E40 /* GitHubFeed.h */,
+				6B5FAB5C206F83B000371E40 /* GitHubFeed.m */,
 			);
 			path = CodeChallenge;
 			sourceTree = "<group>";
@@ -240,6 +257,7 @@
 				8AC26790206EC0550083E45A /* main.m in Sources */,
 				8AC26782206EC0550083E45A /* AppDelegate.m in Sources */,
 				6B5FAB53206F751500371E40 /* RepositoryCell.m in Sources */,
+				6B5FAB5D206F83B000371E40 /* GitHubFeed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
