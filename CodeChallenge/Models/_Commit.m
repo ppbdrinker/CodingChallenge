@@ -38,8 +38,6 @@
 	return keyPaths;
 }
 
-@dynamic author_avatar;
-
 @dynamic author_avatar_url;
 
 @dynamic author_name;
@@ -70,14 +68,13 @@
 	[self setPrimitiveCommit_timestamp:@(value_)];
 }
 
+@dynamic avatar;
+
 @dynamic repository;
 
 @end
 
 @implementation CommitAttributes 
-+ (NSString *)author_avatar {
-	return @"author_avatar";
-}
 + (NSString *)author_avatar_url {
 	return @"author_avatar_url";
 }
@@ -99,6 +96,9 @@
 @end
 
 @implementation CommitRelationships 
++ (NSString *)avatar {
+	return @"avatar";
+}
 + (NSString *)repository {
 	return @"repository";
 }

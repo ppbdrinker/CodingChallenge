@@ -93,6 +93,8 @@
 
 @dynamic short_description;
 
+@dynamic avatar;
+
 @dynamic commits;
 
 - (NSMutableSet<Commit*>*)commitsSet {
@@ -131,6 +133,9 @@
 @end
 
 @implementation RepositoryRelationships 
++ (NSString *)avatar {
+	return @"avatar";
+}
 + (NSString *)commits {
 	return @"commits";
 }

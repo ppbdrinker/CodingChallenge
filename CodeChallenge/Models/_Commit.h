@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class Avatar;
 @class Repository;
 
 @interface CommitID : NSManagedObjectID {}
@@ -21,8 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)entityName;
 + (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) CommitID *objectID;
-
-@property (nonatomic, strong, nullable) NSData* author_avatar;
 
 @property (nonatomic, strong, nullable) NSString* author_avatar_url;
 
@@ -40,14 +39,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (int64_t)commit_timestampValue;
 - (void)setCommit_timestampValue:(int64_t)value_;
 
+@property (nonatomic, strong, nullable) Avatar *avatar;
+
 @property (nonatomic, strong, nullable) Repository *repository;
 
 @end
 
 @interface _Commit (CoreDataGeneratedPrimitiveAccessors)
-
-- (nullable NSData*)primitiveAuthor_avatar;
-- (void)setPrimitiveAuthor_avatar:(nullable NSData*)value;
 
 - (nullable NSString*)primitiveAuthor_avatar_url;
 - (void)setPrimitiveAuthor_avatar_url:(nullable NSString*)value;
@@ -70,13 +68,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (int64_t)primitiveCommit_timestampValue;
 - (void)setPrimitiveCommit_timestampValue:(int64_t)value_;
 
+- (Avatar*)primitiveAvatar;
+- (void)setPrimitiveAvatar:(Avatar*)value;
+
 - (Repository*)primitiveRepository;
 - (void)setPrimitiveRepository:(Repository*)value;
 
 @end
 
 @interface CommitAttributes: NSObject 
-+ (NSString *)author_avatar;
 + (NSString *)author_avatar_url;
 + (NSString *)author_name;
 + (NSString *)branch_name;
@@ -86,6 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface CommitRelationships: NSObject
++ (NSString *)avatar;
 + (NSString *)repository;
 @end
 

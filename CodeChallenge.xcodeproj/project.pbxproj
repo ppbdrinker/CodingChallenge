@@ -19,6 +19,8 @@
 		8AF0EBAD206F7C7300AF374C /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBA9206F7C7300AF374C /* Repository.m */; };
 		8AF0EBAE206F7C7300AF374C /* _Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBAA206F7C7300AF374C /* _Commit.m */; };
 		8AF0EBB4206F7E6800AF374C /* NSDictionary+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */; };
+		8AF0EBB9206F875300AF374C /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBB5206F875200AF374C /* Avatar.m */; };
+		8AF0EBBA206F875300AF374C /* _Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBB6206F875200AF374C /* _Avatar.m */; };
 		8B616C5B24EB85483A33F7B5 /* libPods-CodeChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,10 @@
 		8AF0EBAA206F7C7300AF374C /* _Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Commit.m; sourceTree = "<group>"; };
 		8AF0EBB2206F7E6800AF374C /* NSDictionary+Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Networking.h"; sourceTree = "<group>"; };
 		8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Networking.m"; sourceTree = "<group>"; };
+		8AF0EBB5206F875200AF374C /* Avatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Avatar.m; sourceTree = "<group>"; };
+		8AF0EBB6206F875200AF374C /* _Avatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Avatar.m; sourceTree = "<group>"; };
+		8AF0EBB7206F875300AF374C /* Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
+		8AF0EBB8206F875300AF374C /* _Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Avatar.h; sourceTree = "<group>"; };
 		A33A15A295127B1F83B1C5AA /* Pods-CodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		BA308E849395E49A61DB7D9A /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,10 +114,14 @@
 		8AF0EB9B206F75D900AF374C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8AF0EBB8206F875300AF374C /* _Avatar.h */,
+				8AF0EBB6206F875200AF374C /* _Avatar.m */,
 				8AF0EBA4206F7C7300AF374C /* _Commit.h */,
 				8AF0EBAA206F7C7300AF374C /* _Commit.m */,
 				8AF0EBA6206F7C7300AF374C /* _Repository.h */,
 				8AF0EBA5206F7C7300AF374C /* _Repository.m */,
+				8AF0EBB7206F875300AF374C /* Avatar.h */,
+				8AF0EBB5206F875200AF374C /* Avatar.m */,
 				8AF0EBA3206F7C7300AF374C /* Commit.h */,
 				8AF0EBA8206F7C7300AF374C /* Commit.m */,
 				8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */,
@@ -263,9 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF0EBB9206F875300AF374C /* Avatar.m in Sources */,
 				8AF0EBAD206F7C7300AF374C /* Repository.m in Sources */,
 				8AF0EBB4206F7E6800AF374C /* NSDictionary+Networking.m in Sources */,
 				8AF0EBAC206F7C7300AF374C /* Commit.m in Sources */,
+				8AF0EBBA206F875300AF374C /* _Avatar.m in Sources */,
 				8AC26785206EC0550083E45A /* ViewController.m in Sources */,
 				8AC26790206EC0550083E45A /* main.m in Sources */,
 				8AF0EBAE206F7C7300AF374C /* _Commit.m in Sources */,

@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class Avatar;
 @class Commit;
 
 @interface RepositoryID : NSManagedObjectID {}
@@ -43,6 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSString* repo_name;
 
 @property (nonatomic, strong, nullable) NSString* short_description;
+
+@property (nonatomic, strong, nullable) Avatar *avatar;
 
 @property (nonatomic, strong, nullable) NSSet<Commit*> *commits;
 - (nullable NSMutableSet<Commit*>*)commitsSet;
@@ -86,6 +89,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSString*)primitiveShort_description;
 - (void)setPrimitiveShort_description:(nullable NSString*)value;
 
+- (Avatar*)primitiveAvatar;
+- (void)setPrimitiveAvatar:(Avatar*)value;
+
 - (NSMutableSet<Commit*>*)primitiveCommits;
 - (void)setPrimitiveCommits:(NSMutableSet<Commit*>*)value;
 
@@ -102,6 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface RepositoryRelationships: NSObject
++ (NSString *)avatar;
 + (NSString *)commits;
 @end
 
