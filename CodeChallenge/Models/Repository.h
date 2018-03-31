@@ -1,5 +1,7 @@
 #import "_Repository.h"
 
 @interface Repository : _Repository
-// Custom logic goes here.
+    + (instancetype)entityWithPayload:(NSDictionary *)payload
+                                 rank:(NSUInteger)rank
+                            inContext:(NSManagedObjectContext *)context;
 @end

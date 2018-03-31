@@ -18,6 +18,7 @@
 		8AF0EBAC206F7C7300AF374C /* Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBA8206F7C7300AF374C /* Commit.m */; };
 		8AF0EBAD206F7C7300AF374C /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBA9206F7C7300AF374C /* Repository.m */; };
 		8AF0EBAE206F7C7300AF374C /* _Commit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBAA206F7C7300AF374C /* _Commit.m */; };
+		8AF0EBB4206F7E6800AF374C /* NSDictionary+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */; };
 		8B616C5B24EB85483A33F7B5 /* libPods-CodeChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		8AF0EBA8206F7C7300AF374C /* Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commit.m; sourceTree = "<group>"; };
 		8AF0EBA9206F7C7300AF374C /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		8AF0EBAA206F7C7300AF374C /* _Commit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Commit.m; sourceTree = "<group>"; };
+		8AF0EBB2206F7E6800AF374C /* NSDictionary+Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Networking.h"; sourceTree = "<group>"; };
+		8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Networking.m"; sourceTree = "<group>"; };
 		A33A15A295127B1F83B1C5AA /* Pods-CodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		BA308E849395E49A61DB7D9A /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +90,7 @@
 		8AC2677F206EC0550083E45A /* CodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8AF0EBB0206F7E3100AF374C /* Categories */,
 				8AF0EB9B206F75D900AF374C /* Models */,
 				8AC26780206EC0550083E45A /* AppDelegate.h */,
 				8AC26781206EC0550083E45A /* AppDelegate.m */,
@@ -110,11 +114,20 @@
 				8AF0EBA5206F7C7300AF374C /* _Repository.m */,
 				8AF0EBA3206F7C7300AF374C /* Commit.h */,
 				8AF0EBA8206F7C7300AF374C /* Commit.m */,
+				8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */,
 				8AF0EBA7206F7C7300AF374C /* Repository.h */,
 				8AF0EBA9206F7C7300AF374C /* Repository.m */,
-				8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8AF0EBB0206F7E3100AF374C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0EBB2206F7E6800AF374C /* NSDictionary+Networking.h */,
+				8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		8E9A3E0E896FD7902B4985B0 /* Pods */ = {
@@ -251,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF0EBAD206F7C7300AF374C /* Repository.m in Sources */,
+				8AF0EBB4206F7E6800AF374C /* NSDictionary+Networking.m in Sources */,
 				8AF0EBAC206F7C7300AF374C /* Commit.m in Sources */,
 				8AC26785206EC0550083E45A /* ViewController.m in Sources */,
 				8AC26790206EC0550083E45A /* main.m in Sources */,

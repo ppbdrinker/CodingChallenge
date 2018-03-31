@@ -1,5 +1,7 @@
 #import "_Commit.h"
 
 @interface Commit : _Commit
-// Custom logic goes here.
+    + (instancetype)entityWithPayload:(NSDictionary *)payload
+                           branchName:(NSString *)branchName
+                            inContext:(NSManagedObjectContext *)context;
 @end
