@@ -6,8 +6,11 @@
 //
 
 #import "ViewController.h"
+#import "RepositoryCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource>
+
+@property (nonatomic, weak) IBOutlet UITableView *table;
 
 @end
 
@@ -15,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.table registerNib:[RepositoryCell nib] forCellReuseIdentifier:[RepositoryCell identifier]];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,5 +28,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    RepositoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[RepositoryCell identifier] forIndexPath:indexPath];
+    return cell;
+}
+
+
+
+
+#pragma mark - UITableViewDelegate
 
 @end
