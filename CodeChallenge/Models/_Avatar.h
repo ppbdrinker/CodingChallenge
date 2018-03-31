@@ -25,8 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) NSData* avatar_data;
 
-@property (nonatomic, strong, nullable) NSString* avatar_url;
-
 @property (nonatomic, strong, nullable) Commit *commit;
 
 @property (nonatomic, strong, nullable) Repository *repository;
@@ -38,9 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSData*)primitiveAvatar_data;
 - (void)setPrimitiveAvatar_data:(nullable NSData*)value;
 
-- (nullable NSString*)primitiveAvatar_url;
-- (void)setPrimitiveAvatar_url:(nullable NSString*)value;
-
 - (Commit*)primitiveCommit;
 - (void)setPrimitiveCommit:(Commit*)value;
 
@@ -51,7 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AvatarAttributes: NSObject 
 + (NSString *)avatar_data;
-+ (NSString *)avatar_url;
 @end
 
 @interface AvatarRelationships: NSObject
