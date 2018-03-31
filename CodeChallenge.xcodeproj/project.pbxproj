@@ -24,6 +24,7 @@
 		8AF0EBB4206F7E6800AF374C /* NSDictionary+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */; };
 		8AF0EBB9206F875300AF374C /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBB5206F875200AF374C /* Avatar.m */; };
 		8AF0EBBA206F875300AF374C /* _Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBB6206F875200AF374C /* _Avatar.m */; };
+		8AF0EBC4206F9DD500AF374C /* RepositoriesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EBC3206F9DD500AF374C /* RepositoriesDataProvider.m */; };
 		8B616C5B24EB85483A33F7B5 /* libPods-CodeChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,12 @@
 		8AF0EBB6206F875200AF374C /* _Avatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Avatar.m; sourceTree = "<group>"; };
 		8AF0EBB7206F875300AF374C /* Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
 		8AF0EBB8206F875300AF374C /* _Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Avatar.h; sourceTree = "<group>"; };
+		8AF0EBBB206F94DE00AF374C /* NetworkManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManagerProtocol.h; sourceTree = "<group>"; };
+		8AF0EBBD206F973600AF374C /* DataProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProviderProtocol.h; sourceTree = "<group>"; };
+		8AF0EBBE206F992400AF374C /* BusinessLogicControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessLogicControllerProtocol.h; sourceTree = "<group>"; };
+		8AF0EBC0206F99EF00AF374C /* PersistencyManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistencyManagerProtocol.h; sourceTree = "<group>"; };
+		8AF0EBC2206F9DD500AF374C /* RepositoriesDataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepositoriesDataProvider.h; sourceTree = "<group>"; };
+		8AF0EBC3206F9DD500AF374C /* RepositoriesDataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepositoriesDataProvider.m; sourceTree = "<group>"; };
 		A33A15A295127B1F83B1C5AA /* Pods-CodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		BA308E849395E49A61DB7D9A /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +105,7 @@
 		6B5FAB5F206F883500371E40 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				8AF0EBC1206F9C0E00AF374C /* Proposal */,
 				6B5FAB5A206F7E2C00371E40 /* FeedProtocol.h */,
 				6B5FAB5E206F870D00371E40 /* FetchDelegate.h */,
 			);
@@ -171,6 +179,19 @@
 				8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		8AF0EBC1206F9C0E00AF374C /* Proposal */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0EBBE206F992400AF374C /* BusinessLogicControllerProtocol.h */,
+				8AF0EBBD206F973600AF374C /* DataProviderProtocol.h */,
+				8AF0EBBB206F94DE00AF374C /* NetworkManagerProtocol.h */,
+				8AF0EBC0206F99EF00AF374C /* PersistencyManagerProtocol.h */,
+				8AF0EBC2206F9DD500AF374C /* RepositoriesDataProvider.h */,
+				8AF0EBC3206F9DD500AF374C /* RepositoriesDataProvider.m */,
+			);
+			path = Proposal;
 			sourceTree = "<group>";
 		};
 		8E9A3E0E896FD7902B4985B0 /* Pods */ = {
@@ -313,6 +334,7 @@
 				8AF0EBAC206F7C7300AF374C /* Commit.m in Sources */,
 				8AF0EBBA206F875300AF374C /* _Avatar.m in Sources */,
 				8AC26785206EC0550083E45A /* ViewController.m in Sources */,
+				8AF0EBC4206F9DD500AF374C /* RepositoriesDataProvider.m in Sources */,
 				8AC26790206EC0550083E45A /* main.m in Sources */,
 				8AF0EBAE206F7C7300AF374C /* _Commit.m in Sources */,
 				8AC26782206EC0550083E45A /* AppDelegate.m in Sources */,
