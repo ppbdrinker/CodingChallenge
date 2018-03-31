@@ -8,8 +8,8 @@
 #import "ViewController.h"
 #import "RepositoryCell.h"
 #import "FeedProtocol.h"
-
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+#import "FetchDelegate.h"
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, FetchDelegate>
 
 @property (nonatomic, weak  ) IBOutlet UITableView *table;
 @property (nonatomic, strong) id<FeedDelegate> feed;
@@ -25,6 +25,7 @@
     [refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.table addSubview:refresh];
     self.table.alwaysBounceVertical = YES;
+    [self.feed addFetchDelegate:self];
     //Need to setup feed here
 }
 
@@ -43,6 +44,11 @@
     }];
 }
 
+#pragma mark - FetchDelegate
+
+- (void)didUpdateFecthDelegate:(id<FetchDelegate>)delegate{
+    
+}
 
 #pragma mark - UITableViewDataSource
 

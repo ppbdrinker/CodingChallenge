@@ -9,6 +9,7 @@
 #define FeedProtocol_h
 
 #import <Foundation/Foundation.h>
+#import "FetchDelegate.h"
 
 typedef void(^FeedResultBlock)();
 
@@ -18,6 +19,7 @@ typedef void(^FeedResultBlock)();
 - (void)loadNext:(NSInteger)offset withCompletionHandler:(FeedResultBlock)callback;
 - (NSInteger)count;
 - (id)objectAtIndexPath:(NSIndexPath *)path;
+- (void)addFetchDelegate:(id<FetchDelegate>)delegate;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import "FetchDelegate.h"
 
-@interface GitHubFeed ()<FetchDelegate>
+@interface GitHubFeed ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchResultController;
 
@@ -21,9 +21,6 @@
 
 #pragma mark - FetchDelegate
 
-- (void)didUpdate {
-    
-}
 
 
 #pragma mark - FeedDelegate
@@ -42,6 +39,10 @@
 
 - (id)objectAtIndexPath:(NSIndexPath *)path{
     return [self.fetchResultController objectAtIndexPath:path];
+}
+
+- (void)addFetchDelegate:(id<FetchDelegate>)delegate{
+    
 }
 
 @end

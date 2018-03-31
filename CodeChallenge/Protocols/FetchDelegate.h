@@ -12,7 +12,7 @@
 
 @protocol FetchDelegate
 
-- (void)didUpdate;
+- (void)didUpdateFecthDelegate:(id<FetchDelegate>)delegate;
 
 @end
 
