@@ -13,6 +13,7 @@
 		8AC2678A206EC0550083E45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AC26789206EC0550083E45A /* Assets.xcassets */; };
 		8AC2678D206EC0550083E45A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC2678B206EC0550083E45A /* LaunchScreen.storyboard */; };
 		8AC26790206EC0550083E45A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2678F206EC0550083E45A /* main.m */; };
+		8AF0EB9E206F761900AF374C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */; };
 		8B616C5B24EB85483A33F7B5 /* libPods-CodeChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		8AC2678C206EC0550083E45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AC2678E206EC0550083E45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AC2678F206EC0550083E45A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8AF0EB9D206F761900AF374C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A33A15A295127B1F83B1C5AA /* Pods-CodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		BA308E849395E49A61DB7D9A /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		BE5C9355D5670BBC457EF045 /* libPods-CodeChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 		8AC2677F206EC0550083E45A /* CodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8AF0EB9B206F75D900AF374C /* Models */,
 				8AC26780206EC0550083E45A /* AppDelegate.h */,
 				8AC26781206EC0550083E45A /* AppDelegate.m */,
 				8AC26783206EC0550083E45A /* ViewController.h */,
@@ -84,6 +87,14 @@
 				8AC2678F206EC0550083E45A /* main.m */,
 			);
 			path = CodeChallenge;
+			sourceTree = "<group>";
+		};
+		8AF0EB9B206F75D900AF374C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8E9A3E0E896FD7902B4985B0 /* Pods */ = {
@@ -222,6 +233,7 @@
 				8AC26785206EC0550083E45A /* ViewController.m in Sources */,
 				8AC26790206EC0550083E45A /* main.m in Sources */,
 				8AC26782206EC0550083E45A /* AppDelegate.m in Sources */,
+				8AF0EB9E206F761900AF374C /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +413,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8AF0EB9D206F761900AF374C /* Model.xcdatamodel */,
+			);
+			currentVersion = 8AF0EB9D206F761900AF374C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8AC26775206EC0550083E45A /* Project object */;
 }
