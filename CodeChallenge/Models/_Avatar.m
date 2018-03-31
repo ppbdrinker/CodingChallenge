@@ -34,8 +34,6 @@
 
 @dynamic avatar_data;
 
-@dynamic avatar_url;
-
 @dynamic commit;
 
 @dynamic repository;
@@ -45,9 +43,6 @@
 @implementation AvatarAttributes 
 + (NSString *)avatar_data {
 	return @"avatar_data";
-}
-+ (NSString *)avatar_url {
-	return @"avatar_url";
 }
 @end
 
