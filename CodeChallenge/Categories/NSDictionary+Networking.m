@@ -23,4 +23,19 @@
     }
 }
 
++ (instancetype)dictionaryWithData:(NSData *)data{
+    NSError* error;
+    id object = [NSJSONSerialization JSONObjectWithData:data
+                                                 options:kNilOptions
+                                                   error:&error];
+    NSDictionary* json;
+    if ([object respondsToSelector:@selector(allKeys)]){
+        json = object;
+    }else{
+        json = @{@"items":object};
+    }
+    
+    return json;
+}
+
 @end

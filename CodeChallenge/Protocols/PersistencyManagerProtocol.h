@@ -12,8 +12,12 @@
 // be it CoreData or plain text files on the disk, thus providing abstraction on this layer.
 
 @protocol PersistencyManagerProtocol <NSObject>
-    - (void)createRepositoryWithPayload:(NSDictionary *)payload;
-    - (void)createCommitWithPayload:(NSDictionary *)payload;
-    - (void)createAvatarWithData:(NSData *)data;
-    - (void)resetStorage;
+- (void)startRepositoriesRankWith:(NSInteger)rank;
+
+- (void)createRepositoriesWithPayloads:(NSArray<NSDictionary *> *)payloads;
+- (void)createRepositoryWithPayload:(NSDictionary *)payload;
+
+- (void)createCommitWithPayload:(NSDictionary *)payload;
+- (void)createAvatarWithData:(NSData *)data;
+- (void)resetStorage;
 @end

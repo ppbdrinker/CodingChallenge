@@ -11,7 +11,7 @@
 // but only to the business logic controller.
 // object implementing it will know how to create NSURLSessionTasks, will be aware of the base URL, and will form the request parameters.
 
-typedef void(^DataSuccessBlock)(NSData *imageData)
+typedef void(^DataSuccessBlock)(NSData *imageData);
 typedef void(^SuccessBlock)(NSDictionary *payload);
 typedef void(^FailureBlock)(NSError *error);
 

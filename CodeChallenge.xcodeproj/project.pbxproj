@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		6B5FAB53206F751500371E40 /* RepositoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB51206F751500371E40 /* RepositoryCell.m */; };
 		6B5FAB54206F751500371E40 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5FAB52206F751500371E40 /* RepositoryCell.xib */; };
-		6B5FAB5D206F83B000371E40 /* GitHubFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB5C206F83B000371E40 /* GitHubFeed.m */; };
+		6B5FAB62206FBFE500371E40 /* RepositoryCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB61206FBFE500371E40 /* RepositoryCellModel.m */; };
+		6B5FAB68206FC69100371E40 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB67206FC69100371E40 /* NetworkService.m */; };
+		6B5FAB6B206FD1CF00371E40 /* CoreDataStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB6A206FD1CF00371E40 /* CoreDataStorageManager.m */; };
+		6B5FAB6E206FD80700371E40 /* NSArray+Networkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB6D206FD80700371E40 /* NSArray+Networkin.m */; };
 		8AC26782206EC0550083E45A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC26781206EC0550083E45A /* AppDelegate.m */; };
 		8AC26785206EC0550083E45A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC26784206EC0550083E45A /* ViewController.m */; };
 		8AC26788206EC0550083E45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC26786206EC0550083E45A /* Main.storyboard */; };
@@ -32,10 +35,14 @@
 		6B5FAB50206F751500371E40 /* RepositoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepositoryCell.h; sourceTree = "<group>"; };
 		6B5FAB51206F751500371E40 /* RepositoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepositoryCell.m; sourceTree = "<group>"; };
 		6B5FAB52206F751500371E40 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
-		6B5FAB5A206F7E2C00371E40 /* FeedProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedProtocol.h; sourceTree = "<group>"; };
-		6B5FAB5B206F83B000371E40 /* GitHubFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubFeed.h; sourceTree = "<group>"; };
-		6B5FAB5C206F83B000371E40 /* GitHubFeed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubFeed.m; sourceTree = "<group>"; };
-		6B5FAB5E206F870D00371E40 /* FetchDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchDelegate.h; sourceTree = "<group>"; };
+		6B5FAB60206FBFE500371E40 /* RepositoryCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepositoryCellModel.h; sourceTree = "<group>"; };
+		6B5FAB61206FBFE500371E40 /* RepositoryCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepositoryCellModel.m; sourceTree = "<group>"; };
+		6B5FAB66206FC69100371E40 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		6B5FAB67206FC69100371E40 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		6B5FAB69206FD1CF00371E40 /* CoreDataStorageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStorageManager.h; sourceTree = "<group>"; };
+		6B5FAB6A206FD1CF00371E40 /* CoreDataStorageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStorageManager.m; sourceTree = "<group>"; };
+		6B5FAB6C206FD80700371E40 /* NSArray+Networkin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Networkin.h"; sourceTree = "<group>"; };
+		6B5FAB6D206FD80700371E40 /* NSArray+Networkin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Networkin.m"; sourceTree = "<group>"; };
 		8AC2677D206EC0550083E45A /* CodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC26780206EC0550083E45A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AC26781206EC0550083E45A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,11 +112,52 @@
 		6B5FAB5F206F883500371E40 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				8AF0EBC1206F9C0E00AF374C /* Proposal */,
-				6B5FAB5A206F7E2C00371E40 /* FeedProtocol.h */,
-				6B5FAB5E206F870D00371E40 /* FetchDelegate.h */,
+				8AF0EBBE206F992400AF374C /* BusinessLogicControllerProtocol.h */,
+				8AF0EBBD206F973600AF374C /* DataProviderProtocol.h */,
+				8AF0EBBB206F94DE00AF374C /* NetworkManagerProtocol.h */,
+				8AF0EBC0206F99EF00AF374C /* PersistencyManagerProtocol.h */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6B5FAB63206FBFF000371E40 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0EBB8206F875300AF374C /* _Avatar.h */,
+				8AF0EBB6206F875200AF374C /* _Avatar.m */,
+				8AF0EBA4206F7C7300AF374C /* _Commit.h */,
+				8AF0EBAA206F7C7300AF374C /* _Commit.m */,
+				8AF0EBA6206F7C7300AF374C /* _Repository.h */,
+				8AF0EBA5206F7C7300AF374C /* _Repository.m */,
+				8AF0EBB7206F875300AF374C /* Avatar.h */,
+				8AF0EBB5206F875200AF374C /* Avatar.m */,
+				8AF0EBA3206F7C7300AF374C /* Commit.h */,
+				8AF0EBA8206F7C7300AF374C /* Commit.m */,
+				8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */,
+				8AF0EBA7206F7C7300AF374C /* Repository.h */,
+				8AF0EBA9206F7C7300AF374C /* Repository.m */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		6B5FAB64206FC1BB00371E40 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0EBC2206F9DD500AF374C /* RepositoriesDataProvider.h */,
+				8AF0EBC3206F9DD500AF374C /* RepositoriesDataProvider.m */,
+				6B5FAB69206FD1CF00371E40 /* CoreDataStorageManager.h */,
+				6B5FAB6A206FD1CF00371E40 /* CoreDataStorageManager.m */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		6B5FAB65206FC65600371E40 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6B5FAB66206FC69100371E40 /* NetworkService.h */,
+				6B5FAB67206FC69100371E40 /* NetworkService.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		8AC26774206EC0550083E45A = {
@@ -133,6 +181,8 @@
 		8AC2677F206EC0550083E45A /* CodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				6B5FAB65206FC65600371E40 /* Network */,
+				6B5FAB64206FC1BB00371E40 /* Providers */,
 				6B5FAB4F206F74EE00371E40 /* Views */,
 				8AF0EBB0206F7E3100AF374C /* Categories */,
 				8AF0EB9B206F75D900AF374C /* Models */,
@@ -146,8 +196,6 @@
 				8AC2678E206EC0550083E45A /* Info.plist */,
 				8AC2678F206EC0550083E45A /* main.m */,
 				6B5FAB5F206F883500371E40 /* Protocols */,
-				6B5FAB5B206F83B000371E40 /* GitHubFeed.h */,
-				6B5FAB5C206F83B000371E40 /* GitHubFeed.m */,
 			);
 			path = CodeChallenge;
 			sourceTree = "<group>";
@@ -155,19 +203,9 @@
 		8AF0EB9B206F75D900AF374C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8AF0EBB8206F875300AF374C /* _Avatar.h */,
-				8AF0EBB6206F875200AF374C /* _Avatar.m */,
-				8AF0EBA4206F7C7300AF374C /* _Commit.h */,
-				8AF0EBAA206F7C7300AF374C /* _Commit.m */,
-				8AF0EBA6206F7C7300AF374C /* _Repository.h */,
-				8AF0EBA5206F7C7300AF374C /* _Repository.m */,
-				8AF0EBB7206F875300AF374C /* Avatar.h */,
-				8AF0EBB5206F875200AF374C /* Avatar.m */,
-				8AF0EBA3206F7C7300AF374C /* Commit.h */,
-				8AF0EBA8206F7C7300AF374C /* Commit.m */,
-				8AF0EB9C206F761900AF374C /* Model.xcdatamodeld */,
-				8AF0EBA7206F7C7300AF374C /* Repository.h */,
-				8AF0EBA9206F7C7300AF374C /* Repository.m */,
+				6B5FAB63206FBFF000371E40 /* Core Data */,
+				6B5FAB60206FBFE500371E40 /* RepositoryCellModel.h */,
+				6B5FAB61206FBFE500371E40 /* RepositoryCellModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,21 +215,10 @@
 			children = (
 				8AF0EBB2206F7E6800AF374C /* NSDictionary+Networking.h */,
 				8AF0EBB3206F7E6800AF374C /* NSDictionary+Networking.m */,
+				6B5FAB6C206FD80700371E40 /* NSArray+Networkin.h */,
+				6B5FAB6D206FD80700371E40 /* NSArray+Networkin.m */,
 			);
 			path = Categories;
-			sourceTree = "<group>";
-		};
-		8AF0EBC1206F9C0E00AF374C /* Proposal */ = {
-			isa = PBXGroup;
-			children = (
-				8AF0EBBE206F992400AF374C /* BusinessLogicControllerProtocol.h */,
-				8AF0EBBD206F973600AF374C /* DataProviderProtocol.h */,
-				8AF0EBBB206F94DE00AF374C /* NetworkManagerProtocol.h */,
-				8AF0EBC0206F99EF00AF374C /* PersistencyManagerProtocol.h */,
-				8AF0EBC2206F9DD500AF374C /* RepositoriesDataProvider.h */,
-				8AF0EBC3206F9DD500AF374C /* RepositoriesDataProvider.m */,
-			);
-			path = Proposal;
 			sourceTree = "<group>";
 		};
 		8E9A3E0E896FD7902B4985B0 /* Pods */ = {
@@ -334,12 +361,15 @@
 				8AF0EBAC206F7C7300AF374C /* Commit.m in Sources */,
 				8AF0EBBA206F875300AF374C /* _Avatar.m in Sources */,
 				8AC26785206EC0550083E45A /* ViewController.m in Sources */,
+				6B5FAB6B206FD1CF00371E40 /* CoreDataStorageManager.m in Sources */,
 				8AF0EBC4206F9DD500AF374C /* RepositoriesDataProvider.m in Sources */,
 				8AC26790206EC0550083E45A /* main.m in Sources */,
+				6B5FAB6E206FD80700371E40 /* NSArray+Networkin.m in Sources */,
+				6B5FAB68206FC69100371E40 /* NetworkService.m in Sources */,
 				8AF0EBAE206F7C7300AF374C /* _Commit.m in Sources */,
+				6B5FAB62206FBFE500371E40 /* RepositoryCellModel.m in Sources */,
 				8AC26782206EC0550083E45A /* AppDelegate.m in Sources */,
 				6B5FAB53206F751500371E40 /* RepositoryCell.m in Sources */,
-				6B5FAB5D206F83B000371E40 /* GitHubFeed.m in Sources */,
 				8AF0EBAB206F7C7300AF374C /* _Repository.m in Sources */,
 				8AF0EB9E206F761900AF374C /* Model.xcdatamodeld in Sources */,
 			);

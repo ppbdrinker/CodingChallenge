@@ -18,6 +18,7 @@
 // thus providing abstraction for the data layer.
 @protocol DataProviderProtocol <NSObject>
 @optional
+    - (void)refresh;
     - (id)cellModelAtRow:(NSUInteger)row;
 
     @property (nonatomic, readonly) NSUInteger numberOfRows;
@@ -33,6 +34,6 @@
 // or for just one row, in case of the image download
 @protocol DataConsumer <NSObject>
     - (void)dataProvider:(id<DataProviderProtocol>)dataProvider didChangeImageForRowAtIndex:(NSUInteger)index;
-    - (void)dataProviderDidChangeData:(id<DataProviderProtocol>)dataProvider
+    - (void)dataProviderDidChangeData:(id<DataProviderProtocol>)dataProvider;
 @end
 
