@@ -1,11 +1,7 @@
-//
-//  RepositoryCellModel.m
-//  CodeChallenge
-//
-//  Created by MAC_A_120413 on 3/31/18.
-//
+
 
 #import "RepositoryCellModel.h"
+
 
 
 @interface RepositoryCellModel ()
@@ -34,6 +30,11 @@
 
 - (NSString *)author{
     return self.repository.owner;
+}
+
+- (UIImage *)avatar{
+    UIImage *img = [[UIImage alloc] initWithData:self.repository.image];
+    return img;
 }
 
 

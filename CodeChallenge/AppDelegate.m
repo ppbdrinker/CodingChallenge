@@ -1,9 +1,4 @@
-//
-//  AppDelegate.m
-//  CodeChallenge
-//
-//  Created by alexey novikov on 30.03.2018.
-//
+
 
 #import "AppDelegate.h"
 #import <MagicalRecord/MagicalRecord.h>

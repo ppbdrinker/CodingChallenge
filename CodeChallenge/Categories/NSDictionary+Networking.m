@@ -1,9 +1,4 @@
-//
-//  NSDictionary+Networking.m
-//  CodeChallenge
-//
-//  Created by alexey novikov on 31.03.2018.
-//
+
 
 #import "NSDictionary+Networking.h"
 

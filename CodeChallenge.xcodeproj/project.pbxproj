@@ -13,6 +13,11 @@
 		6B5FAB68206FC69100371E40 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB67206FC69100371E40 /* NetworkService.m */; };
 		6B5FAB6B206FD1CF00371E40 /* CoreDataStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB6A206FD1CF00371E40 /* CoreDataStorageManager.m */; };
 		6B5FAB6E206FD80700371E40 /* NSArray+Networkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FAB6D206FD80700371E40 /* NSArray+Networkin.m */; };
+		6BCC9DDB2070B87B008B5030 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC9DDA2070B87B008B5030 /* DetailsViewController.m */; };
+		6BCC9E052070CAA8008B5030 /* CommitsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC9E042070CAA8008B5030 /* CommitsDataProvider.m */; };
+		6BCC9E092070CB12008B5030 /* CommitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC9E072070CB12008B5030 /* CommitCell.m */; };
+		6BCC9E0A2070CB12008B5030 /* CommitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BCC9E082070CB12008B5030 /* CommitCell.xib */; };
+		6BCC9E0D2070D900008B5030 /* CommitCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC9E0C2070D900008B5030 /* CommitCellModel.m */; };
 		8AC26782206EC0550083E45A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC26781206EC0550083E45A /* AppDelegate.m */; };
 		8AC26785206EC0550083E45A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC26784206EC0550083E45A /* ViewController.m */; };
 		8AC26788206EC0550083E45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC26786206EC0550083E45A /* Main.storyboard */; };
@@ -43,6 +48,15 @@
 		6B5FAB6A206FD1CF00371E40 /* CoreDataStorageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStorageManager.m; sourceTree = "<group>"; };
 		6B5FAB6C206FD80700371E40 /* NSArray+Networkin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Networkin.h"; sourceTree = "<group>"; };
 		6B5FAB6D206FD80700371E40 /* NSArray+Networkin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Networkin.m"; sourceTree = "<group>"; };
+		6BCC9DD92070B87B008B5030 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		6BCC9DDA2070B87B008B5030 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		6BCC9E032070CAA8008B5030 /* CommitsDataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitsDataProvider.h; sourceTree = "<group>"; };
+		6BCC9E042070CAA8008B5030 /* CommitsDataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitsDataProvider.m; sourceTree = "<group>"; };
+		6BCC9E062070CB12008B5030 /* CommitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitCell.h; sourceTree = "<group>"; };
+		6BCC9E072070CB12008B5030 /* CommitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitCell.m; sourceTree = "<group>"; };
+		6BCC9E082070CB12008B5030 /* CommitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitCell.xib; sourceTree = "<group>"; };
+		6BCC9E0B2070D900008B5030 /* CommitCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitCellModel.h; sourceTree = "<group>"; };
+		6BCC9E0C2070D900008B5030 /* CommitCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitCellModel.m; sourceTree = "<group>"; };
 		8AC2677D206EC0550083E45A /* CodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC26780206EC0550083E45A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AC26781206EC0550083E45A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +119,9 @@
 				6B5FAB50206F751500371E40 /* RepositoryCell.h */,
 				6B5FAB51206F751500371E40 /* RepositoryCell.m */,
 				6B5FAB52206F751500371E40 /* RepositoryCell.xib */,
+				6BCC9E062070CB12008B5030 /* CommitCell.h */,
+				6BCC9E072070CB12008B5030 /* CommitCell.m */,
+				6BCC9E082070CB12008B5030 /* CommitCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +164,8 @@
 				8AF0EBC3206F9DD500AF374C /* RepositoriesDataProvider.m */,
 				6B5FAB69206FD1CF00371E40 /* CoreDataStorageManager.h */,
 				6B5FAB6A206FD1CF00371E40 /* CoreDataStorageManager.m */,
+				6BCC9E032070CAA8008B5030 /* CommitsDataProvider.h */,
+				6BCC9E042070CAA8008B5030 /* CommitsDataProvider.m */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -158,6 +177,17 @@
 				6B5FAB67206FC69100371E40 /* NetworkService.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		6BCC9DDC2070B883008B5030 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AC26783206EC0550083E45A /* ViewController.h */,
+				8AC26784206EC0550083E45A /* ViewController.m */,
+				6BCC9DD92070B87B008B5030 /* DetailsViewController.h */,
+				6BCC9DDA2070B87B008B5030 /* DetailsViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		8AC26774206EC0550083E45A = {
@@ -181,6 +211,7 @@
 		8AC2677F206EC0550083E45A /* CodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				6BCC9DDC2070B883008B5030 /* Controllers */,
 				6B5FAB65206FC65600371E40 /* Network */,
 				6B5FAB64206FC1BB00371E40 /* Providers */,
 				6B5FAB4F206F74EE00371E40 /* Views */,
@@ -188,8 +219,6 @@
 				8AF0EB9B206F75D900AF374C /* Models */,
 				8AC26780206EC0550083E45A /* AppDelegate.h */,
 				8AC26781206EC0550083E45A /* AppDelegate.m */,
-				8AC26783206EC0550083E45A /* ViewController.h */,
-				8AC26784206EC0550083E45A /* ViewController.m */,
 				8AC26786206EC0550083E45A /* Main.storyboard */,
 				8AC26789206EC0550083E45A /* Assets.xcassets */,
 				8AC2678B206EC0550083E45A /* LaunchScreen.storyboard */,
@@ -206,6 +235,8 @@
 				6B5FAB63206FBFF000371E40 /* Core Data */,
 				6B5FAB60206FBFE500371E40 /* RepositoryCellModel.h */,
 				6B5FAB61206FBFE500371E40 /* RepositoryCellModel.m */,
+				6BCC9E0B2070D900008B5030 /* CommitCellModel.h */,
+				6BCC9E0C2070D900008B5030 /* CommitCellModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AC2678D206EC0550083E45A /* LaunchScreen.storyboard in Resources */,
+				6BCC9E0A2070CB12008B5030 /* CommitCell.xib in Resources */,
 				8AC2678A206EC0550083E45A /* Assets.xcassets in Resources */,
 				8AC26788206EC0550083E45A /* Main.storyboard in Resources */,
 				6B5FAB54206F751500371E40 /* RepositoryCell.xib in Resources */,
@@ -355,10 +387,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BCC9E092070CB12008B5030 /* CommitCell.m in Sources */,
 				8AF0EBB9206F875300AF374C /* Avatar.m in Sources */,
 				8AF0EBAD206F7C7300AF374C /* Repository.m in Sources */,
 				8AF0EBB4206F7E6800AF374C /* NSDictionary+Networking.m in Sources */,
 				8AF0EBAC206F7C7300AF374C /* Commit.m in Sources */,
+				6BCC9E0D2070D900008B5030 /* CommitCellModel.m in Sources */,
 				8AF0EBBA206F875300AF374C /* _Avatar.m in Sources */,
 				8AC26785206EC0550083E45A /* ViewController.m in Sources */,
 				6B5FAB6B206FD1CF00371E40 /* CoreDataStorageManager.m in Sources */,
@@ -367,9 +401,11 @@
 				6B5FAB6E206FD80700371E40 /* NSArray+Networkin.m in Sources */,
 				6B5FAB68206FC69100371E40 /* NetworkService.m in Sources */,
 				8AF0EBAE206F7C7300AF374C /* _Commit.m in Sources */,
+				6BCC9E052070CAA8008B5030 /* CommitsDataProvider.m in Sources */,
 				6B5FAB62206FBFE500371E40 /* RepositoryCellModel.m in Sources */,
 				8AC26782206EC0550083E45A /* AppDelegate.m in Sources */,
 				6B5FAB53206F751500371E40 /* RepositoryCell.m in Sources */,
+				6BCC9DDB2070B87B008B5030 /* DetailsViewController.m in Sources */,
 				8AF0EBAB206F7C7300AF374C /* _Repository.m in Sources */,
 				8AF0EB9E206F761900AF374C /* Model.xcdatamodeld in Sources */,
 			);

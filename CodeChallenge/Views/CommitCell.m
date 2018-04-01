@@ -1,16 +1,16 @@
 
 
-#import "RepositoryCell.h"
+#import "CommitCell.h"
 
-@implementation RepositoryCell
+@implementation CommitCell
 
 + (UINib *)nib{
-    UINib *nib = [UINib nibWithNibName:[RepositoryCell identifier] bundle:[NSBundle mainBundle]];
+    UINib *nib = [UINib nibWithNibName:[CommitCell identifier] bundle:[NSBundle mainBundle]];
     return nib;
 }
 
 + (NSString *)identifier{
-    NSString *identifier = [[RepositoryCell class] description];
+    NSString *identifier = [[CommitCell class] description];
     return identifier;
 }
 

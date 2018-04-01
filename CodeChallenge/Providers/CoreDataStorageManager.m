@@ -1,12 +1,9 @@
-//
-//  CoreDataStorageManager.m
-//  CodeChallenge
-//
-//  Created by MAC_A_120413 on 3/31/18.
-//
+
 
 #import "CoreDataStorageManager.h"
 #import "Repository.h"
+#import "Commit.h"
+#import "Avatar.h"
 
 @interface CoreDataStorageManager()
 
@@ -45,6 +42,13 @@
 
 - (void)createCommitWithPayload:(NSDictionary *)payload {
     
+}
+
+- (void)createCommitsWithPayloads:(NSArray<NSDictionary *> *)payloads{
+    for (NSDictionary *payload in payloads){
+        [Commit entityWithPayload:payload branchName:@"" inContext:self.context];
+    }
+    [self.context MR_saveOnlySelfAndWait];
 }
 
 - (void)createAvatarWithData:(NSData *)data {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Avatar" representedClassName="Avatar" syncable="YES">
         <attribute name="avatar_data" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="commit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commit" inverseName="avatar" inverseEntity="Commit" syncable="YES"/>
@@ -23,7 +23,7 @@
         <attribute name="repo_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="repo_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="short_description" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="avatar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Avatar" inverseName="repository" inverseEntity="Avatar" syncable="YES"/>
+        <relationship name="avatar" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Avatar" inverseName="repository" inverseEntity="Avatar" syncable="YES"/>
         <relationship name="commits" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Commit" inverseName="repository" inverseEntity="Commit" syncable="YES"/>
     </entity>
     <elements>

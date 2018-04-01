@@ -1,9 +1,4 @@
-//
-//  NetworkServices.m
-//  CodeChallenge
-//
-//  Created by MAC_A_120413 on 3/31/18.
-//
+
 
 #import "NetworkService.h"
 #import "NSDictionary+Networking.h"
@@ -47,6 +42,21 @@
 }
 
 #pragma mark -
+
+- (void)fetchAvatarForURL:(NSString *)url successBlock:(DataSuccessBlock)success failureBlock:(FailureBlock)failure{
+    __block typeof(success) _success = [success copy];
+    __block typeof(failure) _failure = [failure copy];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error){
+            _failure(error);
+        }else{
+            _success(data);
+        }
+    }];
+    [task resume];
+}
+
 
 - (void)fetchAvatarForAuthor:(NSString *)author successBlock:(DataSuccessBlock)success failureBlock:(FailureBlock)failure {
     NSMutableURLRequest *request = [self requestForPath:@""];

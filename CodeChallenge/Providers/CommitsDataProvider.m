@@ -1,28 +1,27 @@
 
 
-#import <CoreData/CoreData.h>
-#import <MagicalRecord/MagicalRecord.h>
-
-#import "RepositoriesDataProvider.h"
-#import "RepositoryCellModel.h"
+#import "CommitsDataProvider.h"
 
 #import "NetworkService.h"
 #import "CoreDataStorageManager.h"
+#import "Repository.h"
 
-@interface RepositoriesDataProvider ()<NSFetchedResultsControllerDelegate>
+@interface CommitsDataProvider ()<NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchController;
 @property (strong, nonatomic) id<NetworkManagerProtocol> network;
 @property (strong, nonatomic) id<PersistencyManagerProtocol> storage;
+@property (strong, nonatomic) NSString *repoID;
+
 
 @end
 
-@implementation RepositoriesDataProvider
+@implementation CommitsDataProvider
 
-- (instancetype)init {
+- (instancetype)initWithRepositoryID:(NSString *)repoID{
     self = [super init];
-
     if (self != nil) {
+        self.repoID = repoID;
         [self initNetworkManager];
         [self initCoreDataStorage];
         [self initFetchedResultsController];
@@ -30,25 +29,22 @@
     return self;
 }
 
+
 - (void)fetchRepositories{
     NSInteger limit = 20;
     __block NSUInteger offset = [self numberOfRows]/limit + 1;
     __weak typeof(self) _self = self;
-    [self.network fetchRepositoriesWithOffset:offset
-                                        limit:limit
-                                 successBlock:^(NSDictionary *payload) {
-                                     NSArray *items = payload[@"items"];
-                                     [_self.storage startRepositoriesRankWith:offset * limit];
-                                     [_self.storage createRepositoriesWithPayloads:items];
-                                 }
-                                 failureBlock:^(NSError *error) {
-                                     
-                                 }];
+    [self.network fetchCommitsForRepository:self.repoID
+                                      limit:limit
+                               successBlock:^(NSDictionary *payload) {
+        NSArray *items = payload[@"items"];
+        [_self.storage createRepositoriesWithPayloads:items];
+    }
+                               failureBlock:^(NSError *error) {
+        
+    }];
 }
 
-- (void)fetchImages:(NSArray *)items{
-    
-}
 
 #pragma mark - DataProviderProtocol
 - (void)refresh{
@@ -64,22 +60,22 @@
     if (row >= self.fetchController.fetchedObjects.count) {
         return nil;
     }
-
+    
     if ([self numberOfRows] - 1 == row ){
         [self fetchRepositories];
     }
     
-    __weak Repository *r = [self.fetchController.fetchedObjects objectAtIndex:row];
-    if (r.image_url != nil && r.image == nil){
-        [self.network fetchAvatarForURL:r.image_url
-                           successBlock:^(NSData *imageData) {
-            r.image = imageData;
-        }
-                           failureBlock:^(NSError *error) {
-            
-        }];
-    }
-    RepositoryCellModel *cellModel = [[RepositoryCellModel alloc] initWithRepository:r];
+    __weak Commit *c = [self.fetchController.fetchedObjects objectAtIndex:row];
+//    if (r.image_url != nil && r.image == nil){
+//        [self.network fetchAvatarForURL:r.image_url
+//                           successBlock:^(NSData *imageData) {
+//                               r.image = imageData;
+//                           }
+//                           failureBlock:^(NSError *error) {
+//
+//                           }];
+//    }
+    CommitCellModel *cellModel = [[CommitCellModel alloc] initWithCommit:c];
     return cellModel;
 }
 
@@ -96,7 +92,7 @@
 }
 
 - (void)notifyDataConsumerAboutImageDownload {
-
+    
 }
 
 #pragma mark - init subroutines
@@ -112,20 +108,21 @@
 }
 
 - (void)initFetchedResultsController {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"objectID != null"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"objectID != null "];
     NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    self.fetchController = [Repository MR_fetchAllSortedBy:@"rank"
-                                                 ascending:YES
+    self.fetchController = [Commit MR_fetchAllSortedBy:@"commit_timestamp"
+                                                 ascending:NO
                                              withPredicate:predicate
                                                    groupBy:nil
                                                   delegate:self
                                                  inContext:context];
     NSError *error;
     [self.fetchController performFetch:&error];
-
+    
     if (error != nil) {
         NSLog(@"Atata, error: %@", error.localizedDescription);
     }
 }
+
 
 @end

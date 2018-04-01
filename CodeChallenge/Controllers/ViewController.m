@@ -1,15 +1,10 @@
-//
-//  ViewController.m
-//  CodeChallenge
-//
-//  Created by alexey novikov on 30.03.2018.
-//
+
 
 #import "ViewController.h"
 #import "RepositoryCell.h"
-#import "DataProviderProtocol.h"
+
 #import "RepositoriesDataProvider.h"
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, DataConsumer>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak  ) IBOutlet UITableView *table;
 @property (nonatomic, strong) id<DataProviderProtocol> provider;
@@ -69,8 +64,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RepositoryCell *cell = [tableView dequeueReusableCellWithIdentifier:[RepositoryCell identifier] forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     RepositoryCellModel *model = [self.provider cellModelAtRow:indexPath.row];
     if (model){
+        cell.repositoryIconImgView.image = [model avatar];
         cell.repositoryNameLabel.text = [model repositoryName];
         cell.descriptionLabel.text = [model repositoryDescription];
         cell.authorLabel.text = [NSString stringWithFormat:@"Author: %@", [model author]];
@@ -81,8 +78,11 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    RepositoryCellModel *model = [self.provider cellModelAtRow:indexPath.row];
+    if (model){
+        
+    }
 }
 
 @end
